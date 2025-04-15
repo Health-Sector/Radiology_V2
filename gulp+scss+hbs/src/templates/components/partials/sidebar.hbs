@@ -1,0 +1,25 @@
+<aside
+   class="sidebar sidebar-base {{#compare side-hover '===' 'true'}} sidebartab {{/compare}} {{#compare side-hover '===' 'false'}} sidebartab1 {{/compare}}  {{ sidebarVariants }}"
+   id="first-tour" data-toggle="main-sidebar" data-sidebar="responsive">
+   <div class="sidebar-header d-flex align-items-center justify-content-start position-relative">
+      <a href="{{path}}index.html" class="navbar-brand me-5 pt-3">
+         {{> components/widgets/logo }}
+      </a>
+
+      <div class="ms-5 wrapper-menu d-flex d-none d-xl-block">
+         <div class="main-circle" role="button"><i class="ri-more-fill"></i></div>
+      </div>
+      <li class="nav-item d-block d-xl-none">
+         <a class="wrapper-menu" data-toggle="sidebar" data-active="true">
+            <div class="main-circle "><i class="ri-more-fill"></i></div>
+         </a>
+      </li>
+
+   </div>
+   <div class="sidebar-body pt-0 data-scrollbar">
+      <div class="sidebar-list">
+         {{> components/partials/vertical-nav }}
+      </div>
+   </div>
+   <div class="sidebar-footer"></div>
+</aside>

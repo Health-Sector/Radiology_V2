@@ -1,0 +1,64 @@
+<!-- Library Bundle Script -->
+<script src="{{path}}assets/js/core/libs.min.js"></script>
+<!-- Plugin Scripts -->
+{{> components/partials/plugin-scripts }}
+
+{{#compare ischartam '==' 'true'}}
+<script src="{{path}}assets/js/charts/chart-am.js?v={{version}}" defer></script>
+{{/compare}}
+
+<!-- Lodash Utility -->
+<script src="{{path}}assets/vendor/lodash/lodash.min.js"></script>
+<!-- Utilities Functions -->
+<script src="{{path}}assets/js/iqonic-script/utility{{#compare dev '!=' 'true'}}.min{{/compare}}.js"></script>
+<!-- Settings Script -->
+<script src="{{path}}assets/js/iqonic-script/setting{{#compare dev '!=' 'true'}}.min{{/compare}}.js"></script>
+<!-- Settings Init Script -->
+<script src="{{path}}assets/js/iqonic-script/setting-init.js"></script>
+<!-- External Library Bundle Script -->
+<script src="{{path}}assets/js/core/external.min.js"></script>
+
+<!-- Dashboard Script -->
+<script src="{{path}}assets/js/charts/dashboard.js?v={{version}}" defer></script>
+<!-- Hopeui Script -->
+<script src="{{path}}assets/js/xray.js?v={{version}}" defer></script>
+<script src="{{path}}assets/js/xray-advance.js?v={{version}}" defer></script>
+<script src="{{path}}assets/js/sidebar.js?v={{version}}" defer></script>
+
+<script src="{{path}}assets/js/dashboard/doctor-dashboard.js?v={{version}}" defer></script>
+<script src="{{path}}assets/js/dashboard/dashboard-1.js?v={{version}}" defer></script>
+<script src="{{path}}assets/js/dashboard/dashboard-2.js?v={{version}}" defer></script>
+<script src="{{path}}assets/js/dashboard/patient-dashboard.js?v={{version}}" defer></script>
+<script src="{{path}}assets/js/dashboard/covid19-dashboard.js?v={{version}}" defer></script>
+
+
+<!-- All charts script -->
+{{#compare ischartpage '==' 'true'}}
+<script src="{{path}}assets/js/charts/chart-page.js?v={{version}}" defer></script>
+{{/compare}}
+
+
+
+{{#compare isechart '==' 'true'}}
+<script src="{{path}}assets/js/charts/e-chart.js?v={{version}}" defer></script>
+{{/compare}}
+
+{{#compare isapexchart '==' 'true'}}
+<script src="{{path}}assets/js/charts/apex-chart.js?v={{version}}" defer></script>
+{{/compare}}
+
+
+
+<!-- e-chart script -->
+<script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+{{#compare isEditTable "==" "true"}}
+{{!-- edit-table --}}
+<script src="{{path}}assets/js/table/edit-table.js" defer></script>
+{{/compare}}
+
+{{!-- enchanter js --}}
+<script src="{{path}}assets/js/Setting/enchanter.js" defer></script>
+<script src="{{path}}assets/js/plugins/countdown.js"></script>

@@ -1,0 +1,737 @@
+<!-- Sidebar Menu Start -->
+<ul class="navbar-nav iq-main-menu" id="sidebar-menu">
+    <li class="nav-item static-item ms-2">
+        <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
+            <span class="default-icon">Dashboard</span>
+            <span class="mini-icon" data-bs-toggle="tooltip" title="Home" data-bs-placement="right">-</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{#compare active '==' 'index'}}active{{/compare}}" href="{{path}}index.html">
+            <i class="ri-hospital-fill" data-bs-toggle="tooltip" title="Dashboard" data-bs-placement="right">
+            </i>
+            <span class="item-name ">Doctor Dashboard</span>
+
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{#compare active '==' 'dashboard1'}}active{{/compare}}"
+            href="{{path}}dashboard-pages/dashboard-1.html">
+            <i class="ri-home-8-fill" data-bs-toggle="tooltip" title="Dashboard" data-bs-placement="right">
+            </i>
+            <span class="item-name ">Hospital Dashboard 1 </span>
+
+        </a>
+    </li>
+    <li class="nav-item">
+
+        <a class="nav-link {{#compare active '==' 'dashboard2'}}active{{/compare}}"
+            href="{{path}}dashboard-pages/dashboard-2.html">
+            <i class="ri-briefcase-4-fill" data-bs-toggle="tooltip" title="Dashboard" data-bs-placement="right">
+            </i>
+            <span class="item-name ">Hospital Dashboard 2</span>
+        </a>
+    </li>
+    <li class="nav-item">
+
+        <a class="nav-link {{#compare active '==' 'patient-dashboard'}}active{{/compare}}"
+            href="{{path}}dashboard-pages/patient-dashboard.html">
+            <i class="ri-briefcase-4-fill" data-bs-toggle="tooltip" title="Dashboard" data-bs-placement="right">
+            </i>
+            <span class="item-name ">Patient Dashboard</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{#compare active '==' 'dashboard4'}}active{{/compare}}"
+            href="{{path}}dashboard-pages/dashboard-4.html">
+            <i class="ri-hospital-fill" data-bs-toggle="tooltip" title="Dashboard" data-bs-placement="right">
+            </i>
+            <span class="item-name ">Covid-19 Dashboard</span>
+        </a>
+    </li>
+
+    </li>
+    <li>
+        <hr class="hr-horizontal">
+    </li>
+    <li class="nav-item static-item ms-2">
+        <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
+            <span class="default-icon">Apps</span>
+            <span class="mini-icon">-</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <div class="colors">
+            <a class="nav-link" data-bs-toggle="collapse" href="#Email" role="button" aria-expanded="false">
+                <i class="ri-mail-open-fill" data-bs-toggle="tooltip" title="Email" data-bs-placement="right"></i>
+                <span class="item-name">Email</span>
+                <i class="right-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </i>
+            </a>
+            <ul class="sub-nav collapse" id="Email" data-bs-parent="#sidebar-menu">
+                <li class="">
+                    <a class="nav-link {{#compare active '==' 'inbox'}}active{{/compare}}"
+                        href="{{path}}email/inbox.html">
+                        <i class="icon ri-inbox-fill">
+                        </i>
+                        <span class="item-name">Inbox</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a class="nav-link {{#compare active '==' 'email-compose'}}active{{/compare}}"
+                        href="{{path}}email/email-compose.html">
+                        <i class="icon ri-edit-2-fill">
+
+                        </i>
+
+                        <span class="item-name">Email Compose</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+    </li>
+
+    <li class="nav-item">
+        <div class="colors">
+            <a class="nav-link" data-bs-toggle="collapse" href="#Doctor" role="button" aria-expanded="false">
+                <i class="icon" data-bs-toggle="tooltip" title="Doctor" data-bs-placement="right">
+                    <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.4"
+                            d="M12.0865 22C11.9627 22 11.8388 21.9716 11.7271 21.9137L8.12599 20.0496C7.10415 19.5201 6.30481 18.9259 5.68063 18.2336C4.31449 16.7195 3.5544 14.776 3.54232 12.7599L3.50004 6.12426C3.495 5.35842 3.98931 4.67103 4.72826 4.41215L11.3405 2.10679C11.7331 1.96656 12.1711 1.9646 12.5707 2.09992L19.2081 4.32684C19.9511 4.57493 20.4535 5.25742 20.4575 6.02228L20.4998 12.6628C20.5129 14.676 19.779 16.6274 18.434 18.1581C17.8168 18.8602 17.0245 19.4632 16.0128 20.0025L12.4439 21.9088C12.3331 21.9686 12.2103 21.999 12.0865 22Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M11.3194 14.3209C11.1261 14.3219 10.9328 14.2523 10.7838 14.1091L8.86695 12.2656C8.57097 11.9793 8.56795 11.5145 8.86091 11.2262C9.15387 10.9369 9.63207 10.934 9.92906 11.2193L11.3083 12.5451L14.6758 9.22479C14.9698 8.93552 15.448 8.93258 15.744 9.21793C16.041 9.50426 16.044 9.97004 15.751 10.2574L11.8519 14.1022C11.7049 14.2474 11.5127 14.3199 11.3194 14.3209Z"
+                            fill="currentColor"></path>
+                    </svg>
+                </i>
+                <span class="item-name">Doctor</span>
+                <i class="right-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </i>
+            </a>
+            <ul class="sub-nav collapse" id="Doctor" data-bs-parent="#sidebar-menu">
+                <li class="">
+                    <a class="nav-link {{#compare active '==' 'doctor-list'}}active{{/compare}}"
+                        href="{{path}}doctor/doctor-list.html">
+                        <i class="ri-file-list-fill">
+                        </i>
+                        <span class="item-name">All Doctor</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a class="nav-link {{#compare active '==' 'add-doctor'}}active{{/compare}}"
+                        href="{{path}}doctor/add-doctor.html">
+                        <i class="ri-user-add-fill">
+                        </i>
+                        <span class="item-name">Add Doctor</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a class="nav-link {{#compare active '==' 'doctor-profile'}}active{{/compare}}"
+                        href="{{path}}doctor/doctor-profile.html">
+                        <i class="ri-profile-fill">
+                        </i>
+                        <span class="item-name">Doctor Profile</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a class="nav-link {{#compare active '==' 'edit-doctor'}}active{{/compare}}"
+                        href="{{path}}doctor/edit-doctor.html">
+                        <i class="ri-file-edit-fill">
+                        </i>
+                        <span class="item-name">Edit Doctor</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link {{#compare active '==' 'calendar'}}active{{/compare}}" href="{{path}}calendar/calendar.html">
+            <i class="ri-calendar-2-line" data-bs-toggle="tooltip" title="Dashboard" data-bs-placement="right">
+            </i>
+            <span class="item-name ">Calendar</span>
+
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link {{#compare active '==' 'chat'}}active{{/compare}}" href="{{path}}chat/chat.html">
+            <i class="ri-message-fill" data-bs-toggle="tooltip" title="Chat" data-bs-placement="right">
+            </i>
+            <span class="item-name ">Chat</span>
+
+        </a>
+    </li>
+
+    <li class="nav-item static-item ms-2">
+        <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
+            <span class="default-icon">Components</span>
+            <span class="mini-icon">-</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <div class="colors">
+            <a class="nav-link" data-bs-toggle="collapse" href="#UIElements" role="button" aria-expanded="false">
+                <i class="ri-apps-fill" data-bs-toggle="tooltip" title="UIElements" data-bs-placement="right"></i>
+                <span class="item-name">UI Elements</span>
+                <i class="right-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </i>
+            </a>
+            <ul class="sub-nav collapse" id="UIElements" data-bs-parent="#sidebar-menu">
+                <li>
+                    <a class="nav-link {{#compare active '==' 'ui-color'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-colors.html">
+                        <i class="ri-font-color"></i>
+                        <span class="item-name">colors</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'typography'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-typography.html">
+                        <i class="ri-text"></i>
+                        <span class="item-name">Typography</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'alerts'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-alerts.html">
+                        <i class="ri-alert-fill"></i>
+                        <span class="item-name">Alerts</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'badges'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-badges.html">
+                        <i class="ri-building-3-fill"></i>
+                        <span class="item-name">Badges</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'breadcrumb'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-breadcrumb.html">
+                        <i class="ri-guide-fill"></i>
+                        <span class="item-name">Breadcrumb</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'buttons'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-buttons.html">
+                        <i class="ri-checkbox-blank-fill"></i>
+                        <span class="item-name">Buttons</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'cards'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-cards.html">
+                        <i class="ri-bank-card-fill"></i>
+                        <span class="item-name">Cards</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'carousel'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-carousel.html">
+                        <i class="ri-slideshow-4-fill"></i>
+                        <span class="item-name">Carousel</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'video'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-embed-video.html">
+                        <i class="ri-movie-fill"></i>
+                        <span class="item-name">Video</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'grid'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-grid.html">
+                        <i class="ri-grid-fill"></i>
+                        <span class="item-name">Grid</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'images'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-images.html">
+                        <i class="ri-image-fill"></i>
+                        <span class="item-name">Images</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'list-group'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-list-group.html">
+                        <i class="ri-file-list-fill"></i>
+                        <span class="item-name">list Group</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'modal'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-modal.html">
+                        <i class="ri-checkbox-blank-fill"></i>
+                        <span class="item-name">Modal</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'notifications'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-notifications.html">
+                        <i class="ri-notification-3-fill"></i>
+                        <span class="item-name">Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'pagination'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-pagination.html">
+                        <i class="ri-more-fill"></i>
+                        <span class="item-name">Pagination</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'popovers'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-popovers.html">
+                        <i class="ri-folder-shield-fill"></i>
+                        <span class="item-name">Popovers</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'progressbar'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-progressbars.html">
+                        <i class="ri-battery-low-fill"></i>
+                        <span class="item-name">Progressbars</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'tabs'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-tabs.html">
+                        <i class="ri-database-fill"></i>
+                        <span class="item-name">Tabs</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'tooltips'}}active{{/compare}}"
+                        href="{{path}}ui-elements/ui-tooltips.html">
+                        <i class="ri-record-mail-fill"></i>
+                        <span class="item-name">Tooltips</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="colors">
+            <a class="nav-link" data-bs-toggle="collapse" href="#Forms" role="button" aria-expanded="false">
+                <i class="ri-device-fill" data-bs-toggle="tooltip" title="Forms" data-bs-placement="right"></i>
+                <span class="item-name">Forms</span>
+                <i class="right-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </i>
+            </a>
+            <ul class="sub-nav collapse" id="Forms" data-bs-parent="#sidebar-menu">
+                <li>
+                    <a class="nav-link {{#compare active '==' 'form-elements'}}active{{/compare}}"
+                        href="{{path}}forms/form-elements.html">
+                        <i class="ri-tablet-fill"></i>
+                        <span class="item-name">Form Elements</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'form-validations'}}active{{/compare}}"
+                        href="{{path}}forms/form-validations.html">
+                        <i class="ri-device-fill"></i>
+                        <span class="item-name">Form Validation</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'form-switch'}}active{{/compare}}"
+                        href="{{path}}forms/form-switch.html">
+                        <i class="ri-toggle-fill"></i>
+                        <span class="item-name">Form Switch</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'form-checkbox'}}active{{/compare}}"
+                        href="{{path}}forms/form-checkbox.html">
+                        <i class="ri-chat-check-fill"></i>
+                        <span class="item-name">Form Checkbox</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'form-radio'}}active{{/compare}}"
+                        href="{{path}}forms/form-radio.html">
+                        <i class="ri-radio-button-fill"></i>
+                        <span class="item-name">Form Radio</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="colors">
+            <a class="nav-link" data-bs-toggle="collapse" href="#Form-Wizard" role="button" aria-expanded="false">
+                <i class="ri-file-word-fill" data-bs-toggle="tooltip" title="Forms" data-bs-placement="right"></i>
+                <span class="item-name">Form Wizard</span>
+                <i class="right-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </i>
+            </a>
+            <ul class="sub-nav collapse" id="Form-Wizard" data-bs-parent="#sidebar-menu">
+                <li>
+                    <a class="nav-link {{#compare active '==' 'simple-wizard'}}active{{/compare}}"
+                        href="{{path}}wizard/simple-wizard.html">
+                        <i class="ri-anticlockwise-fill"></i>
+                        <span class="item-name">Simple Wizard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'validate-wizard'}}active{{/compare}}"
+                        href="{{path}}wizard/validate-wizard.html">
+                        <i class="ri-anticlockwise-2-fill"></i>
+                        <span class="item-name">Validate Wizard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'vertical-wizard'}}active{{/compare}}"
+                        href="{{path}}wizard/vertical-wizard.html">
+                        <i class="ri-clockwise-fill"></i>
+                        <span class="item-name">Vertical Wizard</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="colors">
+            <a class="nav-link" data-bs-toggle="collapse" href="#table" role="button" aria-expanded="false">
+                <i class="ri-table-fill" data-bs-toggle="tooltip" title="Forms" data-bs-placement="right"></i>
+                <span class="item-name">Table</span>
+                <i class="right-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </i>
+            </a>
+            <ul class="sub-nav collapse" id="table" data-bs-parent="#sidebar-menu">
+                <li>
+                    <a class="nav-link {{#compare active '==' 'basic-table'}}active{{/compare}}"
+                        href="{{path}}tables/basic-table.html">
+                        <i class="ri-table-fill"></i>
+                        <span class="item-name">Basic Tables</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'data-table'}}active{{/compare}}"
+                        href="{{path}}tables/data-table.html">
+                        <i class="ri-table-2"></i>
+                        <span class="item-name">Data Tables</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'editable-table'}}active{{/compare}}"
+                        href="{{path}}tables/editable-table.html">
+                        <i class="ri-archive-drawer-fill"></i>
+                        <span class="item-name">Editable Tables</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <div class="colors">
+            <a class="nav-link" data-bs-toggle="collapse" href="#Chart" role="button" aria-expanded="false">
+                <i class="ri-bar-chart-2-fill" data-bs-toggle="tooltip" title="Chart" data-bs-placement="right"></i>
+                <span class="item-name">Charts</span>
+                <i class="right-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </i>
+            </a>
+            <ul class="sub-nav collapse" id="Chart" data-bs-parent="#sidebar-menu">
+                <li>
+                    <a class="nav-link {{#compare active '==' 'ChartPage'}}active{{/compare}}"
+                        href="{{path}}charts/chart-page.html">
+                        <i class="ri-file-chart-fill"></i>
+                        <span class="item-name">Chart Page</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'ECharts'}}active{{/compare}}"
+                        href="{{path}}charts/e-chart.html">
+                        <i class="ri-bar-chart-fill"></i>
+                        <span class="item-name">ECharts</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'AmCharts'}}active{{/compare}}"
+                        href="{{path}}charts/chart-am.html">
+                        <i class="ri-bar-chart-box-fill"></i>
+                        <span class="item-name">Am Charts</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'ApexChart'}}active{{/compare}}"
+                        href="{{path}}charts/apex-chart.html">
+                        <i class="ri-bar-chart-box-fill"></i>
+                        <span class="item-name">Apex Chart</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <div class="colors">
+            <a class="nav-link" data-bs-toggle="collapse" href="#Icons" role="button" aria-expanded="false">
+                <i class="ri-bar-chart-2-fill" data-bs-toggle="tooltip" title="Icons" data-bs-placement="right"></i>
+                <span class="item-name">Icons</span>
+                <i class="right-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </i>
+            </a>
+            <ul class="sub-nav collapse" id="Icons" data-bs-parent="#sidebar-menu">
+                <li>
+                    <a class="nav-link {{#compare active '==' 'Dripicons'}}active{{/compare}}"
+                        href="{{path}}icons/dripicons.html">
+                        <i class="ri-stack-fill"></i>
+                        <span class="item-name">Dripicons</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'FontAwesome'}}active{{/compare}}"
+                        href="{{path}}icons/fontawesome-5.html">
+                        <i class="ri-facebook-fill"></i>
+                        <span class="item-name">Font Awesome 5</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'lineAwesome'}}active{{/compare}}"
+                        href="{{path}}icons/line-awesome.html">
+                        <i class="ri-keynote-fill"></i>
+                        <span class="item-name">line Awesome</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'Remixicon'}}active{{/compare}}"
+                        href="{{path}}icons/remixicon.html">
+                        <i class="ri-remixicon-fill"></i>
+                        <span class="item-name">Remixicon</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'unicons'}}active{{/compare}}"
+                        href="{{path}}icons/unicons.html">
+                        <i class="ri-underline"></i>
+                        <span class="item-name">unicons</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </li>
+
+    <li class="nav-item static-item ms-2">
+        <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
+            <span class="default-icon">Pages</span>
+            <span class="mini-icon">-</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <div class="colors">
+            <a class="nav-link" data-bs-toggle="collapse" href="#Authentication" role="button" aria-expanded="false">
+                <i class="ri-server-fill" data-bs-toggle="tooltip" title="Authentication" data-bs-placement="right"></i>
+                <span class="item-name">Authentication</span>
+                <i class="right-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </i>
+            </a>
+            <ul class="sub-nav collapse" id="Authentication" data-bs-parent="#sidebar-menu">
+                <li>
+                    <a class="nav-link {{#compare active '==' 'sign-in'}}active{{/compare}}"
+                        href="{{path}}auth/sign-in.html">
+                        <i class="ri-login-box-fill"></i>
+                        <span class="item-name">Login</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'sign-up'}}active{{/compare}}"
+                        href="{{path}}auth/sign-up.html">
+                        <i class="ri-logout-box-fill"></i>
+                        <span class="item-name">Register</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'recover-password'}}active{{/compare}}"
+                        href="{{path}}auth/recover-password.html">
+                        <i class="ri-record-mail-fill"></i>
+                        <span class="item-name">Recover Password</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'confirm-mail'}}active{{/compare}}"
+                        href="{{path}}auth/confirm-mail.html">
+                        <i class="ri-chat-check-fill"></i>
+                        <span class="item-name">Confirm Mail</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'lock-screen'}}active{{/compare}}"
+                        href="{{path}}auth/lock-screen.html">
+                        <i class="ri-file-lock-fill"></i>
+                        <span class="item-name">Lock Screen</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="colors">
+            <a class="nav-link" data-bs-toggle="collapse" href="#Maps" role="button" aria-expanded="false">
+                <i class="ri-map-pin-2-fill" data-bs-toggle="tooltip" title="Maps" data-bs-placement="right"></i>
+                <span class="item-name">Maps</span>
+                <i class="right-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </i>
+            </a>
+            <ul class="sub-nav collapse" id="Maps" data-bs-parent="#sidebar-menu">
+                <li>
+                    <a class="nav-link {{#compare active '==' 'google-map'}}active{{/compare}}"
+                        href="{{path}}maps/google-map.html">
+                        <i class="ri-google-fill"></i>
+                        <span class="item-name">Google Map</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'vector-map'}}active{{/compare}}"
+                        href="{{path}}maps/vector-map.html">
+                        <i class="ri-map-pin-range-line"></i>
+                        <span class="item-name">Vector Map</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </li>
+    <li class="nav-item">
+        <div class="colors">
+            <a class="nav-link" data-bs-toggle="collapse" href="#Extrapages" role="button" aria-expanded="false">
+                <i class="ri-folders-fill" data-bs-toggle="tooltip" title="Extrapages" data-bs-placement="right"></i>
+                <span class="item-name">Extra Pages</span>
+                <i class="right-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </i>
+            </a>
+            <ul class="sub-nav collapse" id="Extrapages" data-bs-parent="#sidebar-menu">
+                <li>
+                    <a class="nav-link {{#compare active '==' 'timeline'}}active{{/compare}}"
+                        href="{{path}}extra-pages/pages-timeline.html">
+                        <i class="ri-map-pin-time-fill"></i>
+                        <span class="item-name">Timeline</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'invoice'}}active{{/compare}}"
+                        href="{{path}}extra-pages/pages-invoice.html">
+                        <i class="ri-question-answer-fill"></i>
+                        <span class="item-name">Invoice</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'blank-page'}}active{{/compare}}"
+                        href="{{path}}extra-pages/blank-page.html">
+                        <i class="ri-checkbox-blank-fill"></i>
+                        <span class="item-name">Blank Page</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'error-404'}}active{{/compare}}"
+                        href="{{path}}extra-pages/pages-error-404.html">
+                        <i class="ri-error-warning-fill"></i>
+                        <span class="item-name">Error 404</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'error-500'}}active{{/compare}}"
+                        href="{{path}}extra-pages/pages-error-500.html">
+                        <i class="ri-error-warning-fill"></i>
+                        <span class="item-name">Error 500</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'pricing'}}active{{/compare}}"
+                        href="{{path}}extra-pages/pages-pricing.html">
+                        <i class="ri-price-tag-3-fill"></i>
+                        <span class="item-name">Pricing</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'pricing1'}}active{{/compare}}"
+                        href="{{path}}extra-pages/pages-pricing-one.html">
+                        <i class="ri-price-tag-2-fill"></i>
+                        <span class="item-name">Pricing 1</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'maintenance'}}active{{/compare}}"
+                        href="{{path}}extra-pages/pages-maintenance.html">
+                        <i class="ri-git-repository-commits-fill"></i>
+                        <span class="item-name">Maintenance</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'coming-soon'}}active{{/compare}}"
+                        href="{{path}}extra-pages/pages-comingsoon.html">
+                        <i class="ri-run-fill"></i>
+                        <span class="item-name">Coming Soon</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link {{#compare active '==' 'faq'}}active{{/compare}}"
+                        href="{{path}}extra-pages/pages-faq.html">
+                        <i class="ri-compasses-2-fill"></i>
+                        <span class="item-name">Faq</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <li>
+        <hr class="hr-horizontal">
+    </li>
+</ul>
+
+<!-- Sidebar Menu End -->

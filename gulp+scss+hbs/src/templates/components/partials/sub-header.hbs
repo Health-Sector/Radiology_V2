@@ -1,0 +1,199 @@
+<div class="iq-navbar-header">
+    <div class="container-fluid iq-container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="flex-wrap d-flex justify-content-between align-items-center flex-wrap gap-3">
+                    <div>
+                        <h1 class="fw-bold mb-0">Hello Xray!</h1>
+                    </div>
+                    <div>
+                        <a class="btn btn-link btn-secondary" data-bs-toggle="offcanvas" href="#offcanvasBreadcrumb"
+                            role="button" aria-controls="offcanvasBreadcrumb">
+                            <span class="btn-inner">
+                                <span class="text d-inline-block align-middle">Appointment</span>
+                                <span class="icon d-inline-block align-middle ms-1 ps-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"
+                                        fill="none">
+                                        <path
+                                            d="M7.32046 4.70834H4.74952V7.25698C4.74952 7.66734 4.41395 8 4 8C3.58605 8 3.25048 7.66734 3.25048 7.25698V4.70834H0.679545C0.293423 4.6687 0 4.34614 0 3.96132C0 3.5765 0.293423 3.25394 0.679545 3.21431H3.24242V0.673653C3.28241 0.290878 3.60778 0 3.99597 0C4.38416 0 4.70954 0.290878 4.74952 0.673653V3.21431H7.32046C7.70658 3.25394 8 3.5765 8 3.96132C8 4.34614 7.70658 4.6687 7.32046 4.70834Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="iq-header-img">
+        <img src="{{path}}assets/images/dashboard/top-header.png" alt="header"
+            class="theme-color-default-img img-fluid w-100 h-100" loading="lazy">
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end offcanvas-breadcrumb" tabindex="-1" id="offcanvasBreadcrumb"
+    aria-labelledby="offcanvasBreadcrumbLabel">
+    <div class="offcanvas-header border-bottom">
+        <h3 class="offcanvas-title" id="offcanvasBreadcrumbLabel">Appointment</h3>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">Select Clinic <span class="text-danger">*</span></label>
+                            <select class="form-control select2-basic-single">
+                                <option selected="selected">CareWell Clinic</option>
+                                <option>Vitality Medical Center</option>
+                                <option>Harmony Health Clinic</option>
+                                <option>Serene Care Clinic</option>
+                                <option>Wellness Solutions Center</option>
+                                <option>Tranquil Care Clinic</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Doctor <span class="text-danger">*</span></label>
+                            <select class="form-control select2-basic-single">
+                                <option selected="selected">Amine Louis</option>
+                                <option>Alexandra Johnson</option>
+                                <option>Benjamin Davis</option>
+                                <option>Emily Thompson</option>
+                                <option>Christopher Martinez</option>
+                                <option>Olivia Wilson</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Service <span class="text-danger">*</span></label>
+                            <select class="form-control select2-basic-single">
+                                <option selected="selected">Holistic Wellness Consultation</option>
+                                <option>Advanced Diagnostic Imaging</option>
+                                <option>Nutritional Counseling</option>
+                                <option>Pain Management Therapy</option>
+                                <option>Aesthetic Dermatology Treatments</option>
+                                <option>Sports Injury Rehabilitation</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label" for="datetime">Date And Time <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control date_flatpicker flatpickr-input active" id="datetime"
+                                value="2023-07-02" readonly="readonly">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Patient <span class="text-danger">*</span></label>
+                            <select class="form-control select2-basic-single">
+                                <option selected="selected">Isabella Brown</option>
+                                <option>Daniel White</option>
+                                <option>Ashley Garcia</option>
+                                <option>Jonathan Thomas</option>
+                                <option>Sophia Wilson</option>
+                                <option>Benjamin Chen</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Status <span class="text-danger">*</span></label>
+                            <select class="form-control select2-basic-single">
+                                <option selected="selected">Booked</option>
+                                <option>Pending</option>
+                                <option>Check out</option>
+                                <option>Check in</option>
+                                <option>Cancelled</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label class="form-label" for="profile_image">Add Medical Report</label>
+                            </div>
+                            <input type="file" class="form-control" id="profile_image" accept=".jpeg, .jpg, .png, .gif">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">Available Slot <span class="text-danger">*</span></label>
+                            <div class="p-3 border rounded-3" style="min-height:346px">
+                                <div class="btn-group gap-2 flex-wrap" role="group" aria-label="Basic example">
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">09:30AM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">10:00AM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">10:30AM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">11:00AM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">11:30AM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">12:00PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">12:30PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">01:00PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">01:30PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">02:00PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">02:30PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">03:00PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">03:30PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">04:00PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">04:30PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">05:00PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">05:30PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">06:00PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">06:30PM</button>
+                                    <button
+                                        class="btn btn-outline-light font-size-14 fw-light text-body p-1 rounded">07:00PM</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" id="textarea" rows="2"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas-footer border-top">
+        <div class="d-grid d-md-flex gap-3 p-3">
+            <button type="submit" class="btn btn-primary-subtle d-block">
+                <span class="btn-inner">
+                    <span class="text d-inline-block align-middle">Save</span>
+                    <span class="icon d-inline-block align-middle ms-1 ps-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                            <path
+                                d="M7.32046 4.70834H4.74952V7.25698C4.74952 7.66734 4.41395 8 4 8C3.58605 8 3.25048 7.66734 3.25048 7.25698V4.70834H0.679545C0.293423 4.6687 0 4.34614 0 3.96132C0 3.5765 0.293423 3.25394 0.679545 3.21431H3.24242V0.673653C3.28241 0.290878 3.60778 0 3.99597 0C4.38416 0 4.70954 0.290878 4.74952 0.673653V3.21431H7.32046C7.70658 3.25394 8 3.5765 8 3.96132C8 4.34614 7.70658 4.6687 7.32046 4.70834Z"
+                                fill="currentColor" />
+                        </svg>
+                    </span>
+                </span>
+            </button>
+            <button class="btn btn-secondary-subtle d-block" type="button" data-bs-dismiss="offcanvas">
+                <span class="btn-inner">
+                    <span class="text d-inline-block align-middle">Cancel</span>
+                    <span class="icon d-inline-block align-middle ms-1 ps-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                            <path
+                                d="M7.32046 4.70834H4.74952V7.25698C4.74952 7.66734 4.41395 8 4 8C3.58605 8 3.25048 7.66734 3.25048 7.25698V4.70834H0.679545C0.293423 4.6687 0 4.34614 0 3.96132C0 3.5765 0.293423 3.25394 0.679545 3.21431H3.24242V0.673653C3.28241 0.290878 3.60778 0 3.99597 0C4.38416 0 4.70954 0.290878 4.74952 0.673653V3.21431H7.32046C7.70658 3.25394 8 3.5765 8 3.96132C8 4.34614 7.70658 4.6687 7.32046 4.70834Z"
+                                fill="currentColor" />
+                        </svg>
+                    </span>
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
