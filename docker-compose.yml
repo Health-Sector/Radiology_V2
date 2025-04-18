@@ -1,13 +1,26 @@
+version: '3.8'
+
 services:
-  api:
+  # Combined FastAPI backend and React frontend
+  medixscan-app:
     build:
       context: .
-      dockerfile: Dockerfile.api
-    image: react-flask-app-api
-  client:
-    build:
-      context: .
-      dockerfile: Dockerfile.client
-    image: react-flask-app-client
+      dockerfile: Dockerfile
+    container_name: medixscan-fullstack
     ports:
-      - "3000:80"
+      - "8000:8000"  # FastAPI and React are both served from this port
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+    env_file:
+      - .env
+    networks:
+      - medixscan-network
+    restart: unless-stopped
+
+networks:
+  medixscan-network:
+    driver: bridge 

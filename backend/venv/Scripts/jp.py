@@ -1,4 +1,4 @@
-#!C:\Users\Lenovo\Desktop\xray main\backend\venv\Scripts\python.exe
+#!D:\Major Pro\MediXscan\backend\venv\Scripts\python.exe
 
 import sys
 import json

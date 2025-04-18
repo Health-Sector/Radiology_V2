@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Form, Button, Alert, Spinner, ListGroup } from "react-bootstrap";
-import { analyzeReport, getUserHistory, viewReport, deleteHistory, saveReport } from "../../services/api";
+import { analyzeReport, getUserHistory, viewReport, deleteHistory, saveReport, testAnalyzeReport } from "../../services/api";
 import Chart from "react-apexcharts";
 import { useLanguage } from "../../context/LanguageContext.jsx";
 
@@ -132,6 +132,34 @@ const HospitalDashboardOne = () => {
             console.error("Analysis error:", err);
             setError(err.detail || "Failed to analyze report. Please try again.");
             setResult(null);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Test analyze without using OpenAI
+    const handleTestAnalyze = async () => {
+        if (!reportText.trim()) {
+            setError("Please enter a medical report text");
+            return;
+        }
+        
+        setLoading(true);
+        setError(null);
+        
+        try {
+            console.log("Testing API connectivity...");
+            const response = await testAnalyzeReport(reportText, file);
+            console.log("Test response:", response);
+            
+            if (response.status === "success") {
+                setError(`API Connection Success: Text length ${response.text_length} characters. This is a diagnostic test - no report analysis was performed.`);
+            } else {
+                throw { detail: "Test API failed" };
+            }
+        } catch (err) {
+            console.error("Test error:", err);
+            setError(err.detail || "Test failed. API connection issue.");
         } finally {
             setLoading(false);
         }
@@ -300,27 +328,32 @@ const HospitalDashboardOne = () => {
                                         accept=".txt,.doc,.docx,.pdf"
                                     />
                                 </Form.Group>
-                                <Button
-                                    variant="primary"
-                                    onClick={handleAnalyze}
-                                    disabled={loading || !reportText.trim()}
-                                >
-                                    {loading ? (
-                                        <>
-                                            <Spinner
-                                                as="span"
-                                                animation="border"
-                                                size="sm"
-                                                role="status"
-                                                aria-hidden="true"
-                                                className="me-2"
-                                            />
-                                            {t('analyzing')}
-                                        </>
-                                    ) : (
-                                        t('analyzeReport')
-                                    )}
-                                </Button>
+                                <div className="d-flex">
+                                    <Button
+                                        variant="primary"
+                                        onClick={handleAnalyze}
+                                        disabled={loading || !reportText.trim()}
+                                        className="me-2"
+                                    >
+                                        {loading ? (
+                                            <>
+                                                <Spinner
+                                                    as="span"
+                                                    animation="border"
+                                                    size="sm"
+                                                    role="status"
+                                                    aria-hidden="true"
+                                                />
+                                                <span className="ms-2">{t('analyzing')}</span>
+                                            </>
+                                        ) : (
+                                            t('analyzeReport')
+                                        )}
+                                    </Button>
+                                    <Button variant="secondary" onClick={handleTestAnalyze} disabled={loading}>
+                                        Test API Connection
+                                    </Button>
+                                </div>
                                 {reportText && (
                                     <Button
                                         variant="outline-secondary"

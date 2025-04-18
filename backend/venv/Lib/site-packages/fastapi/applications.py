@@ -15,6 +15,7 @@ from typing import (
 
 from fastapi import routing
 from fastapi.datastructures import Default, DefaultPlaceholder
+from fastapi.encoders import DictIntStrAny, SetIntStr
 from fastapi.exception_handlers import (
     http_exception_handler,
     request_validation_exception_handler,
@@ -30,7 +31,7 @@ from fastapi.openapi.docs import (
 )
 from fastapi.openapi.utils import get_openapi
 from fastapi.params import Depends
-from fastapi.types import DecoratedCallable, IncEx
+from fastapi.types import DecoratedCallable
 from fastapi.utils import generate_unique_id
 from starlette.applications import Starlette
 from starlette.datastructures import State
@@ -92,7 +93,6 @@ class FastAPI(Starlette):
         generate_unique_id_function: Callable[[routing.APIRoute], str] = Default(
             generate_unique_id
         ),
-        separate_input_output_schemas: bool = True,
         **extra: Any,
     ) -> None:
         self.debug = debug
@@ -112,7 +112,6 @@ class FastAPI(Starlette):
         self.swagger_ui_init_oauth = swagger_ui_init_oauth
         self.swagger_ui_parameters = swagger_ui_parameters
         self.servers = servers or []
-        self.separate_input_output_schemas = separate_input_output_schemas
         self.extra = extra
         self.openapi_version = "3.1.0"
         self.openapi_schema: Optional[Dict[str, Any]] = None
@@ -189,20 +188,20 @@ class FastAPI(Starlette):
                 # contextvars.
                 # This needs to happen after user middlewares because those create a
                 # new contextvars context copy by using a new AnyIO task group.
-                # The initial part of dependencies with 'yield' is executed in the
-                # FastAPI code, inside all the middlewares. However, the teardown part
-                # (after 'yield') is executed in the AsyncExitStack in this middleware.
-                # If the AsyncExitStack lived outside of the custom middlewares and
-                # contextvars were set in a dependency with 'yield' in that internal
+                # The initial part of dependencies with yield is executed in the
+                # FastAPI code, inside all the middlewares, but the teardown part
+                # (after yield) is executed in the AsyncExitStack in this middleware,
+                # if the AsyncExitStack lived outside of the custom middlewares and
+                # contextvars were set in a dependency with yield in that internal
                 # contextvars context, the values would not be available in the
-                # outer context of the AsyncExitStack.
-                # By placing the middleware and the AsyncExitStack here, inside all
-                # user middlewares, the code before and after 'yield' in dependencies
-                # with 'yield' is executed in the same contextvars context. Thus, all values
-                # set in contextvars before 'yield' are still available after 'yield,' as
-                # expected.
+                # outside context of the AsyncExitStack.
+                # By putting the middleware and the AsyncExitStack here, inside all
+                # user middlewares, the code before and after yield in dependencies
+                # with yield is executed in the same contextvars context, so all values
+                # set in contextvars before yield is still available after yield as
+                # would be expected.
                 # Additionally, by having this AsyncExitStack here, after the
-                # ExceptionMiddleware, dependencies can now catch handled exceptions,
+                # ExceptionMiddleware, now dependencies can catch handled exceptions,
                 # e.g. HTTPException, to customize the teardown code (e.g. DB session
                 # rollback).
                 Middleware(AsyncExitStackMiddleware),
@@ -229,7 +228,6 @@ class FastAPI(Starlette):
                 webhooks=self.webhooks.routes,
                 tags=self.openapi_tags,
                 servers=self.servers,
-                separate_input_output_schemas=self.separate_input_output_schemas,
             )
         return self.openapi_schema
 
@@ -307,8 +305,8 @@ class FastAPI(Starlette):
         deprecated: Optional[bool] = None,
         methods: Optional[List[str]] = None,
         operation_id: Optional[str] = None,
-        response_model_include: Optional[IncEx] = None,
-        response_model_exclude: Optional[IncEx] = None,
+        response_model_include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        response_model_exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
         response_model_by_alias: bool = True,
         response_model_exclude_unset: bool = False,
         response_model_exclude_defaults: bool = False,
@@ -365,8 +363,8 @@ class FastAPI(Starlette):
         deprecated: Optional[bool] = None,
         methods: Optional[List[str]] = None,
         operation_id: Optional[str] = None,
-        response_model_include: Optional[IncEx] = None,
-        response_model_exclude: Optional[IncEx] = None,
+        response_model_include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        response_model_exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
         response_model_by_alias: bool = True,
         response_model_exclude_unset: bool = False,
         response_model_exclude_defaults: bool = False,
@@ -486,8 +484,8 @@ class FastAPI(Starlette):
         responses: Optional[Dict[Union[int, str], Dict[str, Any]]] = None,
         deprecated: Optional[bool] = None,
         operation_id: Optional[str] = None,
-        response_model_include: Optional[IncEx] = None,
-        response_model_exclude: Optional[IncEx] = None,
+        response_model_include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        response_model_exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
         response_model_by_alias: bool = True,
         response_model_exclude_unset: bool = False,
         response_model_exclude_defaults: bool = False,
@@ -541,8 +539,8 @@ class FastAPI(Starlette):
         responses: Optional[Dict[Union[int, str], Dict[str, Any]]] = None,
         deprecated: Optional[bool] = None,
         operation_id: Optional[str] = None,
-        response_model_include: Optional[IncEx] = None,
-        response_model_exclude: Optional[IncEx] = None,
+        response_model_include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        response_model_exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
         response_model_by_alias: bool = True,
         response_model_exclude_unset: bool = False,
         response_model_exclude_defaults: bool = False,
@@ -596,8 +594,8 @@ class FastAPI(Starlette):
         responses: Optional[Dict[Union[int, str], Dict[str, Any]]] = None,
         deprecated: Optional[bool] = None,
         operation_id: Optional[str] = None,
-        response_model_include: Optional[IncEx] = None,
-        response_model_exclude: Optional[IncEx] = None,
+        response_model_include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        response_model_exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
         response_model_by_alias: bool = True,
         response_model_exclude_unset: bool = False,
         response_model_exclude_defaults: bool = False,
@@ -651,8 +649,8 @@ class FastAPI(Starlette):
         responses: Optional[Dict[Union[int, str], Dict[str, Any]]] = None,
         deprecated: Optional[bool] = None,
         operation_id: Optional[str] = None,
-        response_model_include: Optional[IncEx] = None,
-        response_model_exclude: Optional[IncEx] = None,
+        response_model_include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        response_model_exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
         response_model_by_alias: bool = True,
         response_model_exclude_unset: bool = False,
         response_model_exclude_defaults: bool = False,
@@ -706,8 +704,8 @@ class FastAPI(Starlette):
         responses: Optional[Dict[Union[int, str], Dict[str, Any]]] = None,
         deprecated: Optional[bool] = None,
         operation_id: Optional[str] = None,
-        response_model_include: Optional[IncEx] = None,
-        response_model_exclude: Optional[IncEx] = None,
+        response_model_include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        response_model_exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
         response_model_by_alias: bool = True,
         response_model_exclude_unset: bool = False,
         response_model_exclude_defaults: bool = False,
@@ -761,8 +759,8 @@ class FastAPI(Starlette):
         responses: Optional[Dict[Union[int, str], Dict[str, Any]]] = None,
         deprecated: Optional[bool] = None,
         operation_id: Optional[str] = None,
-        response_model_include: Optional[IncEx] = None,
-        response_model_exclude: Optional[IncEx] = None,
+        response_model_include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        response_model_exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
         response_model_by_alias: bool = True,
         response_model_exclude_unset: bool = False,
         response_model_exclude_defaults: bool = False,
@@ -816,8 +814,8 @@ class FastAPI(Starlette):
         responses: Optional[Dict[Union[int, str], Dict[str, Any]]] = None,
         deprecated: Optional[bool] = None,
         operation_id: Optional[str] = None,
-        response_model_include: Optional[IncEx] = None,
-        response_model_exclude: Optional[IncEx] = None,
+        response_model_include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        response_model_exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
         response_model_by_alias: bool = True,
         response_model_exclude_unset: bool = False,
         response_model_exclude_defaults: bool = False,
@@ -871,8 +869,8 @@ class FastAPI(Starlette):
         responses: Optional[Dict[Union[int, str], Dict[str, Any]]] = None,
         deprecated: Optional[bool] = None,
         operation_id: Optional[str] = None,
-        response_model_include: Optional[IncEx] = None,
-        response_model_exclude: Optional[IncEx] = None,
+        response_model_include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        response_model_exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
         response_model_by_alias: bool = True,
         response_model_exclude_unset: bool = False,
         response_model_exclude_defaults: bool = False,

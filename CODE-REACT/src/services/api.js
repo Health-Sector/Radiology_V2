@@ -169,6 +169,43 @@ export const analyzeReport = async (reportText, file = null) => {
   }
 };
 
+// Test Analysis (doesn't use OpenAI)
+export const testAnalyzeReport = async (reportText, file = null) => {
+  try {
+    console.log('Starting test analysis...');
+    const formData = new FormData();
+    const username = localStorage.getItem('username') || 'default_user';
+    formData.append('username', username);
+    
+    if (file) {
+      console.log('Uploading file for test...');
+      formData.append('uploaded_file', file);
+    } else {
+      console.log('Sending report text for test...');
+      formData.append('report_text', reportText);
+    }
+
+    console.log('Making test API request...');
+    const response = await api.post('/test_analyze', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+
+    console.log('Got test response:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Test analysis failed:', error);
+    console.error('Error details:', {
+      response: error.response,
+      request: error.request,
+      message: error.message,
+    });
+
+    throw { detail: error.message || 'Test analysis failed' };
+  }
+};
+
 // Report History
 export const getUserHistory = async () => {
   try {

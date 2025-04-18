@@ -9,7 +9,7 @@ import json
 import psycopg2
 from datetime import datetime, timedelta
 from typing import Optional
-import jwt
+from jose import jwt
 from passlib.context import CryptContext
 import uuid
 
@@ -444,6 +444,35 @@ async def analyze_report(
         elif "api_key" in error_message.lower():
             error_message = "Invalid or missing API key. Please check your OpenAI API key configuration."
         raise HTTPException(status_code=500, detail=f"Error processing the report: {error_message}")
+
+# Add a simple test endpoint that doesn't use OpenAI
+@app.post("/test_analyze")
+async def test_analyze(
+    username: str = Form(...),
+    report_text: str = Form(None),
+    uploaded_file: UploadFile = File(None)
+):
+    try:
+        # Simple endpoint to verify routing is working
+        result_text = report_text
+        if uploaded_file:
+            try:
+                result_text = (await uploaded_file.read()).decode("utf-8")
+            except:
+                result_text = "Error reading uploaded file"
+        
+        if not result_text:
+            result_text = "No text provided"
+            
+        return {
+            "status": "success",
+            "username": username,
+            "text_length": len(result_text),
+            "sample": result_text[:50] + "..." if len(result_text) > 50 else result_text
+        }
+    except Exception as e:
+        print(f"Error in test_analyze: {str(e)}")
+        return {"status": "error", "detail": str(e)}
 
 @app.get("/history")
 def get_history(current_user: str = Depends(get_current_user)):
