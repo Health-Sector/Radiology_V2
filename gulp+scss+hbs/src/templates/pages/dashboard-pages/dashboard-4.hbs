@@ -1,0 +1,560 @@
+{{#extend layout title="Dashboard" active="dashboard4" path="../" isSelect2="true"
+isFlatpickr="true" side-hover="false"
+isBanner="false" isHeader="true" isSwiperSlider="true" isAmMap="true"}}
+{{#content "content"}}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-block card-stretch card-height ">
+                    <div class="card-body d-flex">
+                        <div class="d-flex align-items-center justify-content-between flex-grow-1">
+                            <div class="text-left">
+                                <h4 class="mb-2 mt-2">Confirm</h4>
+                                <h3 class="mb-0 line-height counter">183,325</h3>
+                            </div>
+                            <div class="rounded-circle card-icon bg-primary"><i class="ri-task-line text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-block card-stretch card-height ">
+                    <div class="card-body d-flex">
+                        <div class="d-flex align-items-center justify-content-between flex-grow-1">
+                            <div class="text-left">
+                                <h4 class="mb-2 mt-2">Recovered</h4>
+                                <h3 class="mb-0 line-height counter">79,908</h3>
+                            </div>
+                            <div class="rounded-circle card-icon bg-warning"><i class="ri-hospital-line text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-block card-stretch card-height ">
+                    <div class="card-body d-flex">
+                        <div class="d-flex align-items-center justify-content-between flex-grow-1">
+                            <div class="text-left">
+                                <h4 class="mb-2 mt-2">Death</h4>
+                                <h3 class="mb-0 line-height counter">7,177</h3>
+                            </div>
+                            <div class="rounded-circle card-icon bg-danger"><i
+                                    class="ri-gradienter-line text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-block card-stretch card-height ">
+                    <div class="card-body P-0 rounded"
+                        style="background:  url('{{path}}assets/images/page-img/44.png') no-repeat scroll center center; background-size: contain; min-height: 127px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="card card-block card-stretch card-height ">
+            <div class="card-body">
+                <div id="world-map" style="height: 400px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="card card-block card-stretch card-height ">
+            <div class="card-header d-flex justify-content-between border-bottom">
+                <div class="header-title">
+                    <h4 class="card-title">Global Record</h4>
+                </div>
+            </div>
+            <div class="card-body pt-0">
+                <div class="table-responsive">
+                    <table class="table mb-0 table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Country</th>
+                                <th scope="col">Confirm</th>
+                                <th scope="col">Recover</th>
+                                <th scope="col">Death</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/china.png" class="img-fluid"
+                                        alt="country-flag"> China
+                                </td>
+                                <td>80,967</td>
+                                <td>972</td>
+                                <td>3,248</td>
+                            </tr>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/france.png" class="img-fluid"
+                                        alt="country-flag"> France
+                                </td>
+                                <td>10,995</td>
+                                <td>245</td>
+                                <td>372</td>
+                            </tr>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/germany.png" class="img-fluid"
+                                        alt="country-flag">
+                                    Germany</td>
+                                <td>15,320</td>
+                                <td>242</td>
+                                <td>44</td>
+                            </tr>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/iran.png" class="img-fluid"
+                                        alt="country-flag"> Iran</td>
+                                <td>18,407</td>
+                                <td>520</td>
+                                <td>1,284</td>
+                            </tr>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/italy.png" class="img-fluid"
+                                        alt="country-flag"> Italy
+                                </td>
+                                <td>41,035</td>
+                                <td>10,600</td>
+                                <td>3,405</td>
+                            </tr>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/netherlands.png" class="img-fluid"
+                                        alt="country-flag">
+                                    Netherlands</td>
+                                <td>2,460</td>
+                                <td>24</td>
+                                <td>76</td>
+                            </tr>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/norway.png" class="img-fluid"
+                                        alt="country-flag"> Norway
+                                </td>
+                                <td>789</td>
+                                <td>135</td>
+                                <td>35</td>
+                            </tr>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/south-koria.png" class="img-fluid"
+                                        alt="country-flag">
+                                    South Korea</td>
+                                <td>1,200</td>
+                                <td>500</td>
+                                <td>600</td>
+                            </tr>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/spain.png" class="img-fluid"
+                                        alt="country-flag"> Spain
+                                </td>
+                                <td>18,077</td>
+                                <td>150</td>
+                                <td>831</td>
+                            </tr>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/sweden.png" class="img-fluid"
+                                        alt="country-flag"> Sweden
+                                </td>
+                                <td>800</td>
+                                <td>250</td>
+                                <td>25</td>
+                            </tr>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/switzerlands.png" class="img-fluid"
+                                        alt="country-flag">
+                                    Switzerland</td>
+                                <td>4,222</td>
+                                <td>125</td>
+                                <td>43</td>
+                            </tr>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/usa.png" class="img-fluid" alt="country-flag">
+                                    United
+                                    States</td>
+                                <td>14,354</td>
+                                <td>150</td>
+                                <td>277</td>
+                            </tr>
+                            <tr>
+                                <td><img src="{{path}}assets/images/small/india.png" class="img-fluid"
+                                        alt="country-flag"> India
+                                </td>
+                                <td>197</td>
+                                <td>50</td>
+                                <td>4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card card-block card-stretch card-height ">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">How to Avoid Virus Infection</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="d-flex mb-4">
+                    <img src="{{path}}assets/images/page-img/45.png"
+                        class="align-self-start me-3 avatar-80 flex-shrink-0" alt="blog-img">
+                    <div class="media-body">
+                        <h5 class="mt-0">Wash your hands frequently</h5>
+                        <p class="mb-0">Regularly and thoroughly clean your
+                            hands with an alcohol-based hand rub
+                            or wash them with soap and water.</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-4">
+                    <img src="{{path}}assets/images/page-img/46.png"
+                        class="align-self-start me-3 avatar-80 flex-shrink-0" alt="blog-img">
+                    <div class="media-body">
+                        <h5 class="mt-0">Maintain social distancing</h5>
+                        <p class="mb-0">Maintain at least 1 metre (3 feet)
+                            distance between yourself and anyone
+                            who is coughing or sneezing.</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-4">
+                    <img src="{{path}}assets/images/page-img/47.png"
+                        class="align-self-start me-3 avatar-80 flex-shrink-0" alt="blog-img">
+                    <div class="media-body">
+                        <h5 class="mt-0">Avoid touching eyes, nose and
+                            mouth</h5>
+                        <p class="mb-0">Hands touch many surfaces and can
+                            pick up viruses. Once contaminated,
+                            hands can transfer the virus to your eyes, nose
+                            or mouth. From there, the virus can
+                            enter your body and can make you sick.</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <img src="{{path}}assets/images/page-img/48.png"
+                        class="align-self-start me-3 avatar-80 flex-shrink-0" alt="blog-img">
+                    <div class="media-body">
+                        <h5 class="mt-0">Practice respiratory hygiene </h5>
+                        <p class="mb-0">Make sure you, and the people around
+                            you, follow good respiratory hygiene.
+                            This means covering your mouth and nose with
+                            your bent elbow or tissue when you cough
+                            or sneeze. Then dispose of the used tissue
+                            immediately.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 mb-4">
+        <div class="ele-widget-swiper swiper navigation-on-hover" data-navtarget="#navDemo3" data-slide="4"
+            data-loop="true" data-speed="1000" data-laptop="3" data-tab="3" data-mobile="2" data-mobile-sm="1"
+            data-navnext="" data-navprev="" data-pagination="" data-center="false" data-autoplay="false"
+            data-spacebtslide="24" data-spacelaptop="24" data-spacetablet="24" data-spacemobile="24">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/china.png"
+                                alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line China</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/france.png"
+                                alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line France</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/germany.png"
+                                alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line Germany</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/iran.png"
+                                alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line Iran</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/italy.png"
+                                alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line Italy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/netherlands.png"
+                                alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line Netherlands</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/norway.png"
+                                alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line Norway</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/south-koria.png"
+                                alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line South Korea</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/spain.png"
+                                alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line Spain</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/sweden.png"
+                                alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line Sweden</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/switzerlands.png"
+                                alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line SwizerLand</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/usa.png" alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line United States</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height mb-0 ">
+                        <div class="card-body">
+                            <img class="arrow-img w-auto mb-3" src="{{path}}assets/images/small/india.png"
+                                alt="iconflag">
+                            <h5 class="contact-number">
+                                <i aria-hidden="true" class="ion ion-android-call"></i>
+                                + 1 800 324 2323
+                            </h5>
+                            <p class="mb-0">Help line India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="iqonic-navigation-custom iq-navi navigation-center">
+                <div class="iqonic-navigation d-flex" id="navDemo3">
+                    <div class="swiper-buttons swiper-button-prev" tabindex="0" role="button"
+                        aria-label="Previous slide">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+                    <div class="swiper-buttons swiper-button-next" tabindex="-1" role="button" aria-label="Next slide">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 mt-2">
+        <div class="ele-widget-swiper swiper dasb-cust-swiper" data-navtarget="#navDemo2" data-slide="3"
+            data-loop="true" data-speed="1000" data-laptop="3" data-tab="2" data-mobile="2" data-mobile-sm="1"
+            data-navnext="" data-navprev="" data-pagination="" data-center="false" data-autoplay="false"
+            data-spacebtslide="24" data-spacelaptop="24" data-spacetablet="24" data-spacemobile="24">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height ">
+                        <div class="image-block">
+                            <img src="{{path}}assets/images/page-img/40.png" class="img-fluid w-100" alt="blog-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="blog-description">
+                                <div class="blog-meta"><a href="#">March 21,
+                                        2020</a></div>
+                                <h4 class="mb-2">Containing coronavirus
+                                    spread comes</h4>
+                                <p>In the blog post, the IMF experts
+                                    observed, "Success in containing the
+                                    virus comes
+                                    at the price of slowing economic
+                                    activity, no matter whether social
+                                    distancing
+                                    and reduced mobility are voluntary or
+                                    enforced."</p>
+                                <a href="#">Read More <i class="ri-arrow-right-s-line"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height ">
+                        <div class="image-block">
+                            <img src="{{path}}assets/images/page-img/41.png" class="img-fluid w-100" alt="blog-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="blog-description">
+                                <div class="blog-meta"><a href="#">March 21,
+                                        2020</a></div>
+                                <h4 class="mb-2">Latest coronavirus
+                                    updates</h4>
+                                <p>ABC Action News is committed to providing
+                                    Tampa Bay area residents all of the
+                                    updates on the coronavirus, COVID-19,
+                                    and the impact it's having on our way of
+                                    life. To help you stay on top of it all,
+                                    we'll be updating this daily blog as we
+                                    continue to get through this
+                                    together.</p>
+                                <a href="#">Read More <i class="ri-arrow-right-s-line"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height ">
+                        <div class="image-block">
+                            <img src="{{path}}assets/images/page-img/42.png" class="img-fluid w-100" alt="blog-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="blog-description">
+                                <div class="blog-meta"><a href="#">March 21,
+                                        2020</a></div>
+                                <h4 class="mb-2">False Hope about
+                                    Coronavirus</h4>
+                                <p>While patients can and do recover from
+                                    coronavirus infections, there are
+                                    currently no approved treatments that
+                                    are known to work against COVID-19. He
+                                    said
+                                    at his press briefing yesterday, that
+                                    two drugs, hydroxychloroquine and
+                                    remdesivir</p>
+                                <a href="#">Read More <i class="ri-arrow-right-s-line"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card card-block card-stretch card-height ">
+                        <div class="image-block">
+                            <img src="{{path}}assets/images/page-img/43.png" class="img-fluid w-100" alt="blog-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="blog-description">
+                                <div class="blog-meta"><a href="#">March 21,
+                                        2020</a></div>
+                                <h4 class="mb-2">Coronavirus in Maine
+                                    Blog</h4>
+                                <p>This now includes cases formerly
+                                    identified as presumptive positive. This
+                                    classification applies to samples sent
+                                    by a health provider directly to HETL
+                                    that
+                                    test positive and to samples from
+                                    non-governmental labs for which HETL
+                                    validates
+                                    positive results. </p>
+                                <a href="#">Read More <i class="ri-arrow-right-s-line"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="iqonic-navigation-custom navigation-center">
+                <div class="iqonic-navigation" id="navDemo2">
+                    <div class="swiper-buttons swiper-button-prev" tabindex="0" role="button"
+                        aria-label="Previous slide">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+                    <div class="swiper-buttons swiper-button-next" tabindex="-1" role="button" aria-label="Next slide">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/content}}
+{{/extend}}

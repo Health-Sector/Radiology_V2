@@ -1,0 +1,87 @@
+{{#extend
+"layouts/dashboard/simple" title="sign-in" active="sign-in" path="../"
+}}
+{{#content "content"}}
+
+<section class="sign-in-page custom-auth-height d-md-flex align-items-center">
+  <div class="container sign-in-page-bg mt-5 mb-md-5 mb-0 p-0">
+    <div class="row">
+      <div class="col-md-6 text-center z-2">
+        <div class="sign-in-detail text-white">
+          <a href="{{path}}index.html" class="sign-in-logo mb-2">
+            <img src="{{path}}assets/images/logo-white.png" class="img-fluid" alt="" />
+          </a>
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{path}}assets/images/login/1.png" class="d-block w-100" alt="..." />
+                <h4 class="mb-1 mt-3 text-white">Manage your orders</h4>
+                <p class="pb-5">It is a long established fact that a reader
+                  will be distracted by the readable content.</p>
+              </div>
+              <div class="carousel-item">
+                <img src="{{path}}assets/images/login/2.png" class="d-block w-100" alt="..." />
+                <h4 class="mb-1 mt-3 text-white">Manage your orders</h4>
+                <p class="pb-5">It is a long established fact that a reader
+                  will be distracted by the readable content.</p>
+
+              </div>
+              <div class="carousel-item">
+                <img src="{{path}}assets/images/login/3.png" class="d-block w-100" alt="..." />
+                <h4 class="mb-1 mt-3 text-white">Manage your orders</h4>
+                <p class="pb-5">It is a long established fact that a reader
+                  will be distracted by the readable content.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 position-relative z-2">
+        <div class="sign-in-from d-flex flex-column justify-content-center">
+          <h1 class="mb-0">Sign In</h1>
+          <form class="mt-4">
+            <p>Enter your email address and password to access admin panel.</p>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email Address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+            </div>
+            <div class="d-flex justify-content-between form-group mb-0">
+              <label for="exampleInputPassword1">Password</label>
+              <a href="{{path}}auth/recover-password.html" class="float-end">Forgot Password?</a>
+            </div>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+            <div class="d-flex w-100 justify-content-between align-items-center w-100 mt-3">
+              <div class="custom-control custom-checkbox d-flex d-inline-block form-group mb-0">
+                <input type="checkbox" class="custom-control-input me-1" id="customCheck1" />
+                <label class="custom-control-label" for="customCheck1">Remember Me</label>
+              </div>
+              <button type="submit" class="btn btn-primary-subtle float-end">Sign
+                In</button>
+            </div>
+            <div class="sign-info d-flex justify-content-between flex-column flex-lg-row align-items-center">
+              <span class="dark-color d-inline-block line-height-2">Don't
+                have an account?
+                <a href="{{path}}auth/sign-up.html">Sign Up</a></span>
+              <ul class="auth-social-media">
+                <li><a href="#"><i class="ri-facebook-box-line"></i></a></li>
+                <li><a href="#"><i class="ri-twitter-line"></i></a></li>
+                <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/content}}
+{{/extend}}

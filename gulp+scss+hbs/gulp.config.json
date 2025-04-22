@@ -1,0 +1,95 @@
+{
+    "output": "dist",
+    "mini": "false",
+    "layout": "layouts/dashboard/default",
+    "googleFontApi": "AIzaSyBG58yNdAjc20_8jAvLNSVi9E4Xhwjau_k",
+    "options": {
+        "saveLocal": "sessionStorage",
+        "storeKey": "XRay",
+        "setting": {
+            "app_name": {
+                "value": "XRay"
+            },
+            "theme_scheme_direction": {
+                "value": "ltr"
+            },
+            "theme_scheme": {
+                "value": "light"
+            },
+            "theme_style_appearance": {
+                "value": [
+                    "theme-default"
+                ]
+            },
+            "theme_color": {
+                "value": "default"
+            },
+            "theme_transition": {
+                "value": "theme-with-animation"
+            },
+            "theme_font_size": {
+                "value": "theme-fs-sm"
+            },
+            "page_layout": {
+                "value": "container-fluid"
+            },
+            "header_navbar": {
+                "value": "default"
+            },
+            "header_banner": {
+                "value": "default"
+            },
+            "sidebar_color": {
+                "value": "sidebar-color"
+            },
+            "card_color": {
+                "value": "card-default"
+            },
+            "sidebar_type": {
+                "value": [
+                    "sidebar-hover",
+                    "sidebar-mini"
+                ]
+            },
+            "sidebar_menu_style": {
+                "value": "sidebar-default navs-pill-all"
+            },
+            "footer": {
+                "value": "default"
+            },
+            "body_font_family": {
+                "value": null
+            },
+            "heading_font_family": {
+                "value": null
+            }
+        }
+    },
+    "modules": [],
+    "assets": {
+        "fonts": [
+            "./src/assets/fonts/**/*.*"
+        ],
+        "style": [
+            "./node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css",
+            "./node_modules/apexcharts/dist/apexcharts.css",
+            "./node_modules/select2/dist/css/select2.min.css"
+        ],
+        "js": {
+            "core": [
+                "./node_modules/jquery/dist/jquery.js",
+                "./node_modules/datatables.net/js/jquery.dataTables.min.js",
+                "./node_modules/@popperjs/core/dist/umd/popper.min.js",
+                "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+                "./node_modules/datatables.net-bs5/js/dataTables.bootstrap5.min.js",
+                "./node_modules/waypoints/lib/noframework.waypoints.min.js"
+            ],
+            "external": [
+                "./node_modules/smooth-scrollbar/dist/smooth-scrollbar.js",
+                "./node_modules/counterup2/dist/index.js",
+                "./node_modules/apexcharts/dist/apexcharts.min.js",
+                "./node_modules/select2/dist/js/select2.min.js"
+            ]
+        }
+    }
+}
